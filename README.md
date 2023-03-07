@@ -156,10 +156,13 @@ public class MovieListViewModel extends AndroidViewModel {
 6. Now we add an observer in Mainactivity class under View package. if any data in the api gets changed, it will change it in repository, and ViewModel will catch the changed data. And obser will keep observing, whenever any data gets changed in the vViewModel, observier will get notified and it will update the UI(REcyclerView In our case).
 
       movieListViewModel.getTopRatedMovieLists().observe(this, new Observer<List<Result>>() {
+    
             @Override
             public void onChanged(List<Result> results) {
+    
                 movieListAdapter=new MovieListAdapter(MainActivity.this,results);
                 recyclerView.setAdapter(movieListAdapter);
+    
             }
         });
 
