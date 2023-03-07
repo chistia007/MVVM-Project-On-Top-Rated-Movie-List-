@@ -12,24 +12,18 @@ Then get the classes from the website and import json dependency in buld.Gradle(
 
 
 public class Result {
-
-
     public Boolean getAdult() {
         return adult;
     }
-
     public void setAdult(Boolean adult) {
         this.adult = adult;
     }
-
     public String getBackdropPath() {
         return backdropPath;
     }
-
     public void setBackdropPath(String backdropPath) {
         this.backdropPath = backdropPath;
     }
-
     public List<Integer> getGenreIds() {
         return genreIds;
     }
@@ -47,7 +41,6 @@ public class Result {
     }
 //  ........................................
 //  ........................................
-
 
 }
 
