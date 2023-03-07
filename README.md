@@ -54,6 +54,7 @@ public class Result {
 
   ........................................
   ........................................
+  
 }
 
 2. then create api services and retrofiInstances classes in the network package.Then provide necessary code to call the api.
