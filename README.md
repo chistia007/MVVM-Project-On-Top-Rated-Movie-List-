@@ -1,4 +1,5 @@
-# MVVM-Project-On-Top-Rated-Movie-List-
+# MVVM-Project-On-Top-Rated-Movie-List
+
 This project is done using MVVM pattern, Retrofit2, Rest api, Live Data, Glide.
 
 
@@ -10,9 +11,8 @@ Then get the classes from the website and import json dependency in buld.Gradle(
 
 1.create classes named Result and MovieModel for Models package under Service package that you got extraxting from josn in the previous step.
 
-
+```java
 public class Result {
-
     public Boolean getAdult() {
         return adult;
     }
@@ -44,6 +44,7 @@ public class Result {
 //  ........................................
 
 }
+```
 
 
 
@@ -53,7 +54,7 @@ public class Result {
 
 
 
-
+```java
 public class MovieRepository {
     private static Context mcontext;
     private MovieModel movieModel;
@@ -87,12 +88,13 @@ public class MovieRepository {
     }
 
 }
+```
 
 
     
     
 4. then we will add Mutablelive data in the same class.
-
+```java
 public class MovieRepository {
     private static Context mcontext;
     private MovieModel movieModel;
@@ -131,12 +133,13 @@ public class MovieRepository {
         return mutableLiveData;
     }
 }
+```
 
     
     
     
 5. fetch the live data in ViewModel class from repository. this MovieListViewModel class will hold data until the activity is finised. it will even preverse data in onResume() mode.
-
+```java
 public class MovieListViewModel extends AndroidViewModel {
 
     private MovieRepository movieRepository;
@@ -149,12 +152,12 @@ public class MovieListViewModel extends AndroidViewModel {
         return movieRepository.getTopRatedMovieLists();
     }
 }
-
+```
     
     
     
 6. Now we add an observer in Mainactivity class under View package. if any data in the api gets changed, it will change it in repository, and ViewModel will catch the changed data. And obser will keep observing, whenever any data gets changed in the vViewModel, observier will get notified and it will update the UI(REcyclerView In our case).
-
+```java
       movieListViewModel.getTopRatedMovieLists().observe(this, new Observer<List<Result>>() {
     
             @Override
@@ -168,3 +171,4 @@ public class MovieListViewModel extends AndroidViewModel {
 
     }
 }
+```
