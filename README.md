@@ -10,12 +10,6 @@ Then get the classes from the website and import json dependency in buld.Gradle(
 
 1.create classes named Result and MovieModel for Models package under Service package that you got extraxting from josn in the previous step.
 
-package com.example.mvvmproject.Service.Model;
-
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
 
 public class Result {
 
