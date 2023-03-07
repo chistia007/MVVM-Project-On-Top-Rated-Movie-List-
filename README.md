@@ -53,10 +53,17 @@ public class Result {
     }
 //  ........................................
 //  ........................................
+
+
 }
+
+
+
 
 2. then create api services and retrofiInstances classes in the network package.Then provide necessary code to call the api.
 3. in the MovieRepository class, we will intialize our repository and fetch data using rest api at the same time according to our need.
+
+
 
 
 public class MovieRepository {
@@ -94,6 +101,8 @@ public class MovieRepository {
 }
 
 
+    
+    
 4. then we will add Mutablelive data in the same class.
 
 public class MovieRepository {
@@ -135,6 +144,9 @@ public class MovieRepository {
     }
 }
 
+    
+    
+    
 5. fetch the live data in ViewModel class from repository. this MovieListViewModel class will hold data until the activity is finised. it will even preverse data in onResume() mode.
 
 public class MovieListViewModel extends AndroidViewModel {
@@ -150,6 +162,9 @@ public class MovieListViewModel extends AndroidViewModel {
     }
 }
 
+    
+    
+    
 6. Now we add an observer in Mainactivity class under View package. if any data in the api gets changed, it will change it in repository, and ViewModel will catch the changed data. And obser will keep observing, whenever any data gets changed in the vViewModel, observier will get notified and it will update the UI(REcyclerView In our case).
 
       movieListViewModel.getTopRatedMovieLists().observe(this, new Observer<List<Result>>() {
