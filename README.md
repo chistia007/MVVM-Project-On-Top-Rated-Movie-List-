@@ -54,7 +54,6 @@ public class Result {
 
   ........................................
   ........................................
-
 }
 
 2. then create api services and retrofiInstances classes in the network package.Then provide necessary code to call the api.
@@ -92,9 +91,6 @@ public class MovieRepository {
 
         return mResult;
     }
-
-
-
 
 }
 
@@ -138,9 +134,6 @@ public class MovieRepository {
 
         return mutableLiveData;
     }
-
-    
-
 }
 
 5. fetch the live data in ViewModel class from repository. this MovieListViewModel class will hold data until the activity is finised. it will even preverse data in onResume() mode.
@@ -167,7 +160,6 @@ public class MovieListViewModel extends AndroidViewModel {
                 recyclerView.setAdapter(movieListAdapter);
             }
         });
-
 
     }
 }
