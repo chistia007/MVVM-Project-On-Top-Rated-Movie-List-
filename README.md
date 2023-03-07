@@ -12,6 +12,7 @@ Then get the classes from the website and import json dependency in buld.Gradle(
 
 
 public class Result {
+
     public Boolean getAdult() {
         return adult;
     }
